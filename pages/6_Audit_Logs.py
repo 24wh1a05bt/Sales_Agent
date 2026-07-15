@@ -6,9 +6,11 @@ import streamlit as st
 
 from auth import require_login
 from database import get_audit_logs, get_leads
+from theme import inject_css
 
 st.set_page_config(page_title="Audit Logs", page_icon="📜", layout="wide")
 user = require_login()
+inject_css()
 
 st.title("📜 Audit Logs")
 st.caption("Complete, append-only log of every AI decision and human action. "

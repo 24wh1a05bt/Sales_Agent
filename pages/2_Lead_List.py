@@ -9,10 +9,12 @@ from enrichment import enrich_lead
 from scoring import score_lead
 from utils import badge_color
 from ai_client import get_api_key
+from theme import inject_css
 
 st.set_page_config(page_title="Lead List", page_icon="📋", layout="wide")
 require_login()
 user = current_user()
+inject_css()
 
 st.title("📋 Lead List")
 

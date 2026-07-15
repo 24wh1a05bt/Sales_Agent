@@ -5,10 +5,12 @@ import streamlit as st
 from auth import require_login, current_user
 from database import get_all_drafts, get_lead, get_enrichment, update_draft, log_action, insert_email_draft
 from email_agent import generate_email
+from theme import inject_css
 
 st.set_page_config(page_title="Email Approval", page_icon="✉️", layout="wide")
 require_login()
 user = current_user()
+inject_css()
 
 st.title("✉️ Email Approval")
 st.caption("No email is ever sent automatically. Every AI draft requires human approval.")

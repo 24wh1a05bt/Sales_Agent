@@ -11,10 +11,12 @@ from scoring import score_lead
 from email_agent import generate_email
 from utils import badge_color
 from ai_client import get_api_key
+from theme import inject_css
 
 st.set_page_config(page_title="Lead Details", page_icon="🔍", layout="wide")
 require_login()
 user = current_user()
+inject_css()
 
 st.title("🔍 Lead Details")
 

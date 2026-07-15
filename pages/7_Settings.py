@@ -6,9 +6,11 @@ import streamlit as st
 from auth import require_login
 from database import get_icp, update_icp, get_all_users
 from utils import PROTECTED_FIELDS
+from theme import inject_css
 
 st.set_page_config(page_title="Settings", page_icon="⚙️", layout="wide")
 user = require_login()
+inject_css()
 
 st.title("⚙️ Settings")
 

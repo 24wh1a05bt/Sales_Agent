@@ -5,10 +5,12 @@ import streamlit as st
 
 from auth import require_login, current_user
 from database import insert_lead, log_action
+from theme import inject_css
 
 st.set_page_config(page_title="Lead Intake", page_icon="📥", layout="wide")
 require_login()
 user = current_user()
+inject_css()
 
 st.title("📥 Lead Intake")
 st.caption("Accept leads from CSV, Excel, manual entry, or the API.")

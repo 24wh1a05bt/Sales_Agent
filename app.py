@@ -12,10 +12,12 @@ import streamlit as st
 
 from database import init_db, get_leads
 from auth import login, logout, current_user
+from theme import inject_css
 
 st.set_page_config(page_title="Lead Qualification & Outreach Agent", page_icon="🎯", layout="wide")
 
 init_db()
+inject_css()
 
 
 def render_login():
